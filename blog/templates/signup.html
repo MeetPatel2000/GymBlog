@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,24 +63,33 @@
       .verify-button:hover {
         background-color: #FAEED1;
       }
+
+      .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px; /* Adjust the top margin as needed */
+        }
     </style>
   </head>
   <body>
+    
     <div class="container">
       <img
         class="header-image"
-        src="/blog/static/photos/email.jpg"
+        src="/static/photos/email.jpg"
         alt="Header Image"
       />
 
       <h2>Please Verify Your Account</h2>
       <p>An email verification code has been sent to your email address.</p>
-
+      <form action='/signup/' method='POST'>
+         {% csrf_token %}
       <div>
         <input
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_1"
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -87,6 +97,7 @@
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_2"
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -94,6 +105,7 @@
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_3"
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -101,6 +113,7 @@
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_4"
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -108,6 +121,7 @@
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_5"
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -115,6 +129,7 @@
           class="verification-code"
           type="text"
           maxlength="1"
+          name="verification_code_6" 
           oninput="moveToNext(this)"
           onkeydown="moveToPrev(this)"
         />
@@ -122,7 +137,20 @@
     </br>
 
       <button class="verify-button">Verify & Continue</button>
+  </br></br>
+        <div class="error-message">
+     {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+      </div>
     </div>
+  </form>
 
     <script>
       function moveToNext(input) {
