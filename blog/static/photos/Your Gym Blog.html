@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- saved from url=(0031)http://127.0.0.1:8000/homepage/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Gym Blog</title>
     <!-- Include Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="./Your Gym Blog_files/bootstrap.min.css">
     <style>
       <style > * {
         margin: 0;
@@ -234,14 +231,11 @@
         background-color: #561c24; /* Darker red button background color on hover */
       }
     </style>
-     <script>
-        {{ js_script|safe }}
-    </script>
   </head>
   <body>
     <div class="container">
       <div class="logo">
-        <img src="/static/photos/Logo.png" alt="Logo" width="70" height="70" />
+        <img src="./Your Gym Blog_files/Logo.png" alt="Logo" width="70" height="70">
       </div>
       <nav>
         <ul>
@@ -249,88 +243,66 @@
           <li>Services</li>
           <li>Products</li>
           <li>Clients</li>
-          <a style="text-decoration: none" href="contact"><li>Contact</li></a>
+          <a style="text-decoration: none" href="http://127.0.0.1:8000/homepage/contact"><li>Contact</li></a>
         </ul>
       </nav>
       <div class="nav-buttons">
         <button onclick="openSignInOverlay()">Sign In</button>
-        <button id="signup-button" onclick="openSignUpOverlay()">Sign Up</button>
+        <button onclick="openSignUpOverlay()">Sign Up</button>
       </div>
     </div>
 
-    <div class="overlay" id="signinOverlay">
+    <div class="overlay" id="signinOverlay" style="display: none;">
       <div class="modal-content">
-        <span class="close" onclick="closeOverlay('signinOverlay')"
-          >&times;</span
-        >
+        <span class="close" onclick="closeOverlay(&#39;signinOverlay&#39;)">×</span>
         <h2>Sign In</h2>
         <form>
           <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" required />
+            <input type="email" class="form-control" id="email" required="">
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              required
-            />
+            <input type="password" class="form-control" id="password" required="">
           </div>
           <button type="submit" class="btn btn-primary">Sign In</button>
         </form>
-    </br>
+    <br>
         <p>
           Don't have an account yet?
-          <a href="#" class="signupbutton" onclick="openSignUpOverlay()">Sign Up</a>
+          <a href="http://127.0.0.1:8000/homepage/#" class="signupbutton" onclick="openSignUpOverlay()">Sign Up</a>
         </p>
       </div>
     </div>
 
-    <div class="overlay" id="signupOverlay">
+    <div class="overlay" id="signupOverlay" style="display: none;">
       <div class="modal-content">
-        <span class="close" onclick="closeOverlay('signupOverlay')"
-          >&times;</span
-        >
+        <span class="close" onclick="closeOverlay(&#39;signupOverlay&#39;)">×</span>
         <h2>Sign Up</h2>
-        <form action="/homepage/" method='POST' >
-            {% csrf_token %}
-            {{ form.as_p }}
+        <form action="http://127.0.0.1:8000/homepage/" method="POST" onsubmit="return validatePassword();">
+            <input type="hidden" name="csrfmiddlewaretoken" value="fhuoDP5KZsph4BNleUj6g1R5hRfCAro3QcDTNDoXu7OotJ1q0S0wsfXtIT0Yzwty">
+            
           <div class="form-group">
             <label>UserName:</label>
-            <input type="text" class="form-control" name='username' id="username" required />
+            <input type="text" class="form-control" name="username" id="username" required="">
           </div>
           <div class="form-group">
             <label>Email address:</label>
-            <input type="email" class="form-control" name='email' id="email" required />
+            <input type="email" class="form-control" name="email" id="email" required="">
           </div>
           <div class="form-group">
             <label>Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              name='password'
-              id="password"
-              required
-            />
+            <input type="password" class="form-control" name="password" id="password" required="">
           </div>
           <div class="form-group">
             <label>Retype Password:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="retype_Password"
-              name='retype_password'
-              required
-            />
-            <p id="password-match-message"></p> <!-- Live password matching validation message -->
-            {% if error_message %}
-        <p style="color: red;">{{ error_message }}</p>
-        {% endif %}
+            <input type="password" class="form-control" id="retype_Password" name="retype_password" required="">
+            
+        <p style="color: red;">Passwords do not match.</p>
+        
 
           </div>
-          <button type="submit" id="signup-button" class="btn btn-primary" >Sign Up</button>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
       </div>
     </div>
@@ -356,8 +328,9 @@
       
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+    <script src="./Your Gym Blog_files/jquery-3.3.1.slim.min.js.download"></script>
+    <script src="./Your Gym Blog_files/popper.min.js.download"></script>
+    <script src="./Your Gym Blog_files/bootstrap.min.js.download"></script>
+  
+
+</body></html>

@@ -3,9 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Gym Blog</title>
+    <title>Email Verification</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .header-image {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px 10px 0 0;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .verification-code {
+        font-size: 24px;
+        margin: 10px;
+        width: 2em;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #007bff; /* Border line color */
+        margin: 10px;
+      }
+
+      .verification-code:focus {
+        outline: none;
+        border-bottom: 2px solid #0056b3; /* Highlight border color when focused */
+      }
+
+      .verify-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #FAF1ED;
+        color: #2B3499;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.5s;
+      }
+
+      .verify-button:hover {
+        background-color: #FAEED1;
+      }
+    </style>
   </head>
   <body>
-    <h1>Signup page lol</h1>
+    <div class="container">
+      <img
+        class="header-image"
+        src="/blog/static/photos/email.jpg"
+        alt="Header Image"
+      />
+
+      <h2>Please Verify Your Account</h2>
+      <p>An email verification code has been sent to your email address.</p>
+
+      <div>
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+        <input
+          class="verification-code"
+          type="text"
+          maxlength="1"
+          oninput="moveToNext(this)"
+          onkeydown="moveToPrev(this)"
+        />
+      </div>
+    </br>
+
+      <button class="verify-button">Verify & Continue</button>
+    </div>
+
+    <script>
+      function moveToNext(input) {
+        var next = input.nextElementSibling;
+
+        // If the input is not at its maximum length and a character is entered, move to the next field
+        if (next && input.value.length === input.maxLength) {
+          next.focus();
+        }
+      }
+
+      function moveToPrev(input) {
+        var prev = input.previousElementSibling;
+
+        // If the Backspace key is pressed and the input is empty, move to the previous field
+        if (
+          event &&
+          event.code === "Backspace" &&
+          input.value.length === 0 &&
+          prev
+        ) {
+          prev.focus();
+        }
+      }
+    </script>
   </body>
 </html>

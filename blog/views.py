@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import UserProfile
 from django.contrib.auth.models import User
-from django.contrib import messages
+from js2py import eval_js
 
 def homepage(request):
     return render(request,'homepage.html')
@@ -27,9 +27,10 @@ def homepage(request):
             return redirect('signup')
         else:
             error_message = 'Passwords do not match.'
-            return render(request, 'homepage.html', {'error_message': error_message})
+            js_script = 'alert("Passwords do not match!");'
+            return render(request, 'homepage.html', {'error_message': error_message, 'js_script': js_script})
     else:
-        return render(request, 'homepage.html')
+         return render(request, 'homepage.html')
 
 def signup(request):
     return render(request,'signup.html')
