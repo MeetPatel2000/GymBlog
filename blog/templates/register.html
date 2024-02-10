@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(123deg, #71b8e7, #9b59b6);
+      }
+
+      .container {
+        max-width: 600px; /* Adjusted max-width for a wider form */
+        width: 100%;
+        background: #fff;
+        padding: 20px 25px;
+        border-radius: 5px;
+      }
+
+      .container .title {
+        font-size: 20px; /* Adjusted font size for a more compact form */
+        font-weight: 500;
+        position: relative;
+      }
+
+      .container .title::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 3px;
+        margin-top: 1px;
+        width: 40px;
+        background: linear-gradient(123deg, #71b8e7, #9b59b6);
+      }
+
+      .container form .user_details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      form .user_details .input_pox {
+        margin-bottom: 10px; /* Adjusted margin for a more compact vertical form */
+        margin: 12px 0; /* Adjusted margin for a more compact vertical form */
+        width: calc(100% / 2 - 15px);
+      }
+
+      .user_details .input_pox .datails {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .user_details .input_pox input {
+        height: 30px; /* Adjusted height for a more compact input field */
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding-left: 10px; /* Adjusted padding for a more compact vertical form */
+        font-size: 14px; /* Adjusted font size for a more compact form */
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+      }
+
+      .user_details .input_pox input:focus,
+      .user_details .input_pox input:valid {
+        border-color: #9b59b6;
+      }
+
+      form .gender_details .gender_title {
+        font-size: 16px; /* Adjusted font size for a more compact form */
+        font-weight: 500;
+      }
+
+      form .gender_details .category {
+        display: flex;
+        width: 80%;
+        margin: 12px 0; /* Adjusted margin for a more compact vertical form */
+        margin-bottom: -10px;
+      }
+
+      .gender_details .category label {
+        display: flex;
+      }
+
+      .gender_details .category .dot {
+        height: 12px; /* Adjusted height for a more compact dot */
+        width: 12px; /* Adjusted width for a more compact dot */
+        background: #d9d9d9;
+        border-radius: 50%;
+        margin-right: 8px; /* Adjusted margin for a more compact vertical form */
+        border: 3px solid transparent;
+      }
+
+      #dot-1:checked ~ .category label .one,
+      #dot-2:checked ~ .category label .two,
+      #dot-3:checked ~ .category label .three {
+        border-color: #d9d9d9;
+        background-color: #9b59b6;
+      }
+
+      form input[type="radio"] {
+        display: none;
+      }
+
+      form .button {
+        height: 30px; /* Adjusted height for a more compact button */
+        margin: 30px 0; /* Adjusted margin for a more compact vertical form */
+      }
+
+      form .button input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        color: #fff;
+        border: none;
+        font-size: 14px; /* Adjusted font size for a more compact form */
+        font-weight: 500;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        background: linear-gradient(123deg, #71b8e7, #9b59b6);
+      }
+
+      form .button input:hover {
+        background: linear-gradient(-123deg, #71b8e7, #9b59b6);
+      }
+
+      @media (max-width: 584px) {
+        .container {
+          max-width: 100%;
+        }
+        form .user_details .input_pox {
+          margin-bottom: 10px; /* Adjusted margin for a more compact vertical form */
+          width: 100%;
+        }
+        form .gender_details .category {
+          width: 100%;
+        }
+        .container form .user_details {
+          max-height: 300px;
+          overflow: scroll;
+        }
+        .user_details::-webkit-scrollber {
+          width: 0;
+        }
+      }
+
+      /* Style for radio buttons */
+      .gender_details {
+        display: flex;
+        flex-direction: column;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .gender_details label {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .gender_details input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Custom radio button */
+      .gender_details .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px; /* Larger circle */
+        width: 24px; /* Larger circle */
+        background-color: #ddd;
+        border-radius: 50%;
+        transition: background-color 0.3s ease; /* Smooth transition */
+      }
+
+      /* Checked state style with animation */
+      .gender_details input:checked + .checkmark:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #7256f8;
+        animation: pulse 0.3s ease-in-out; /* Pulse animation */
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Radio button labels */
+      .gender_details label .gender {
+        margin-left: 10px;
+      }
+
+      /* Hover effect */
+      .gender_details label:hover .checkmark {
+        background-color: #ccc;
+      }
+
+      .gender_details .category label {
+        display: flex;
+        position: relative;
+      }
+
+      .gender_details .category label .dot {
+        height: 18px;
+        width: 18px;
+        background: #d9d9d9;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 5px solid transparent;
+        transition: all 0.3s;
+      }
+
+      .gender_details .category input:checked + label .dot {
+        border-color: #d9d9d9;
+        background-color: #9b59b6;
+        transform: scale(
+          1.2
+        ); /* You can adjust the scale value for the desired size */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <br />
+      <p style="color: red">(*) Fields are mandatory</p>
+      <br />
+
+      <div class="error-message">
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div class="{{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <form action="/register/" method="POST">
+        {% csrf_token %}
+        <div class="user_details">
+          <div class="input_pox">
+            <label for="first_name" class="datails">First Name *</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
+          <div class="input_pox">
+            <label for="last_name" class="datails">Last Name</label>
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+          <div class="input_pox">
+            <label for="email" class="datails">Email *</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="input_pox">
+            <label for="phone_number" class="datails">Phone Number</label>
+            <input
+              type="text"
+              id="phone_number"
+              name="phone_number"
+              placeholder="Enter your phone number"
+            />
+          </div>
+          <div class="input_pox">
+            <label for="password" class="datails">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="input_pox">
+            <label for="confirm_password" class="datails"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+        </div>
+        <div class="gender_details">
+          <input type="radio" name="gender" id="dot-1" class="radio-input" />
+          <input type="radio" name="gender" id="dot-2" class="radio-input" />
+          <input type="radio" name="gender" id="dot-3" class="radio-input" />
+          <label for="dot-1" class="gender_title"> Gender*</label>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
