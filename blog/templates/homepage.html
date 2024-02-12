@@ -32,12 +32,9 @@
         padding: 0 20px;
       }
 
-      .logo {
-        padding: 10px;
-      }
-
       .logo img {
         mix-blend-mode: multiply;
+        margin-left: -200px;
       }
 
       nav ul {
@@ -78,35 +75,9 @@
         transform: scaleX(1);
       }
 
-      /* Burger menu styles */
-      .burger-menu {
-        display: none;
-        cursor: pointer;
-      }
-
-      @media (max-width: 767px) {
-        nav {
-          display: none;
-          position: absolute;
-          top: 70px;
-          left: 0;
-          width: 100%;
-          box-shadow: none;
-          border-radius: 0;
-        }
-
-        nav.show {
-          display: flex;
-        }
-
-        .burger-menu {
-          display: block;
-        }
-      }
-
       /* New styles for Sign In and Sign Up buttons */
       .nav-buttons {
-        padding-top: 10px;
+        padding-top: 15px;
       }
 
       .nav-buttons a {
@@ -240,15 +211,14 @@
   <body>
     <div class="container">
       <div class="logo">
-        <img src="/static/photos/Logo.png" alt="Logo" width="70" height="70" />
+        <img src="/static/photos/Logo.jpg" alt="Logo" width="70" height="70" />
       </div>
       <nav>
         <ul>
-          <li>Articles</li>
           <li>Services</li>
           <li>Products</li>
           <li>Clients</li>
-          <a style="text-decoration: none" href="contact"><li>Contact</li></a>
+          <a style="text-decoration: none" href="contact/"><li>Contact</li></a>
         </ul>
       </nav>
       <div class="nav-buttons">

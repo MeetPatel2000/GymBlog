@@ -156,17 +156,29 @@ body{
     </style>
   </head>
   <body>
-    <form action="/signin/" method="POST">
+
+    <div class="error-message">
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div class="{{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    <form action="/login/" method="POST">
+    {% csrf_token %}
     <div class="container">
       <div class="form" id="login">
         <h1 class="form__title">Welcome back</h1>
         <div class="form__input-group">
           <input
-            type="email"
+            type="text"
             class="form__input"
             autofocus
-            placeholder="Email"
-            id="usernameinput"
+            placeholder="UserName"
+            id="username"
+            name="username"
             required
           />
         </div>
@@ -176,12 +188,15 @@ body{
             class="form__input"
             autofocus
             placeholder="Password"
-            id="passwordInput"
+            id="password"
+            name='password'
           />
+        </br></br>
+          <label for="remember_me">Remember Me</label>
+          <input type="checkbox" name="remember_me" id="remember_me">
           <div class="padding"></div>
-          <a href="#"
-            ><button class="form__button" id="loginButton">Login</button></a
-          >
+      </br>
+            <button type="submit" class="form__button">Login</button>
         </div>
     </br>
         <h3>
@@ -192,4 +207,23 @@ body{
     </div>
     <form>
   </body>
-</html>
+  <script>
+    // Check for remembered credentials and fill in the form
+    document.addEventListener('DOMContentLoaded', function () {
+        var rememberedUsername = getCookie('remembered_username');
+        var rememberedPassword = getCookie('remembered_password');
+
+        if (rememberedUsername && rememberedPassword) {
+            document.getElementById('username').value = rememberedUsername;
+            document.getElementById('password').value = rememberedPassword;
+            document.getElementById('remember_me').checked = true;
+        }
+    });
+
+    // Helper function to get a cookie value by name
+    function getCookie(name) {
+        var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        if (match) return match[2];
+    }
+</script>
+</html> 

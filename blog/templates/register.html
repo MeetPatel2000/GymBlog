@@ -85,6 +85,7 @@
       form .gender_details .gender_title {
         font-size: 16px; /* Adjusted font size for a more compact form */
         font-weight: 500;
+        margin-left: -30px;
       }
 
       form .gender_details .category {
@@ -261,7 +262,7 @@
       <p style="color: red">(*) Fields are mandatory</p>
       <br />
 
-      <div class="error-message">
+      <div style="color: red" class="error-message">
         {% if messages %}
         <div class="messages">
           {% for message in messages %}
@@ -275,27 +276,33 @@
         {% csrf_token %}
         <div class="user_details">
           <div class="input_pox">
-            <label for="first_name" class="datails">First Name *</label>
+            <label for="first_name" class="datails"
+              >Full Name <span style="color: red">*</span></label
+            >
             <input
               type="text"
-              id="first_name"
-              name="first_name"
+              id="fullname"
+              name="fullname"
               placeholder="Enter your first name"
               required
             />
           </div>
           <div class="input_pox">
-            <label for="last_name" class="datails">Last Name</label>
+            <label for="username" class="datails"
+              >UserName <span style="color: red">*</span></label
+            >
             <input
               type="text"
-              id="last_name"
-              name="last_name"
-              placeholder="Enter your last name"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
               required
             />
           </div>
           <div class="input_pox">
-            <label for="email" class="datails">Email *</label>
+            <label for="email" class="datails"
+              >Email <span style="color: red">*</span></label
+            >
             <input
               type="text"
               id="email"
@@ -340,7 +347,9 @@
           <input type="radio" name="gender" id="dot-1" class="radio-input" />
           <input type="radio" name="gender" id="dot-2" class="radio-input" />
           <input type="radio" name="gender" id="dot-3" class="radio-input" />
-          <label for="dot-1" class="gender_title"> Gender*</label>
+          <label for="dot-1" class="gender_title">
+            Gender<span style="color: red">*</span></label
+          >
           <div class="category">
             <label for="dot-1">
               <span class="dot one"></span>

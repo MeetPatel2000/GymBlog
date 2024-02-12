@@ -8,64 +8,83 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
-
-<div
-  class="container mx-auto flex justify-center items-center lg:px-20 md:px-14 sm:px-8 bg-gray-200 py-12 h-full"
->
-  <div class="grid lg:grid-cols-3 grid-col-1">
-    <div class="bg-red-500 px-9 py-14 text-center">
-      <h1 class="text-3xl text-white font-medium">Contact Us</h1>
-      <p class="text-base text-white mt-4">
-        Feel free to reach out to us for any inquiries or assistance.
-      </p>
-    </div>
-    <div class="bg-white col-span-2 py-14 lg:px-10 px-8">
-      <h2 class="text-3xl font-medium mb-6">Get in touch</h2>
-      <p class="text-base text-gray-500 pb-6">
-        We would love to hear from you. Please fill out the form below.
-      </p>
-      <div class="grid md:grid-cols-2 grid-col-1 gap-4">
-        <div class="flex flex-col py-4">
-          <label for="First Name" class="text-base font-medium"
-            >First Name</label
-          >
-          <input
-            type="text"
-            class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
-          />
+<form action="/contact/" method="POST">
+  {% csrf_token %}
+  <div
+    class="container mx-auto flex justify-center items-center lg:px-20 md:px-14 sm:px-8 bg-gray-200 py-12 h-full"
+  >
+    <div class="grid lg:grid-cols-3 grid-col-1">
+      <div class="bg-red-500 px-9 py-14 text-center">
+        <h1 class="text-3xl text-white font-medium">Contact Us</h1>
+        <p class="text-base text-white mt-4">
+          Feel free to reach out to us for any inquiries or assistance.
+        </p>
+      </div>
+      <div class="bg-white col-span-2 py-14 lg:px-10 px-8">
+        <h2 class="text-3xl font-medium mb-6">Get in touch</h2>
+        <p class="text-base text-gray-500 pb-6">
+          We would love to hear from you. Please fill out the form below.
+        </p>
+        <div class="grid md:grid-cols-2 grid-col-1 gap-4">
+          <div class="flex flex-col py-4">
+            <label for="First Name" class="text-base font-medium"
+              >First Name</label
+            >
+            <input
+              type="text"
+              class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
+              name="first_name"
+              id="first_name"
+              required
+            />
+          </div>
+          <div class="flex flex-col py-4">
+            <label for="First Name" class="text-base font-medium"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
+              name="last_name"
+              id="last_name"
+              required
+            />
+          </div>
         </div>
         <div class="flex flex-col py-4">
-          <label for="First Name" class="text-base font-medium"
-            >Last Name</label
-          >
+          <label for="Email" class="text-base font-medium">Email</label>
           <input
-            type="text"
+            type="email"
             class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
+            name="email"
+            id="email"
+            required
           />
         </div>
+        <div class="flex flex-col py-4 pb-8">
+          <label for="Message" class="text-base font-medium">Message</label>
+          <textarea
+            name="text"
+            id="text"
+            cols="20"
+            rows="4"
+            class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
+            required
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-red-400 px-8 py-3 rounded-md text-white hover:bg-white hover:text-red-400 border-2 border-solid border-red-400 transition-all"
+        >
+          Submit Now
+        </button>
+        <button
+          type="submit"
+          class="bg-red-400 px-8 py-3 rounded-md text-white hover:bg-white hover:text-red-400 border-2 border-solid border-red-400 transition-all"
+        >
+          Submit
+        </button>
       </div>
-      <div class="flex flex-col py-4">
-        <label for="Email" class="text-base font-medium">Email</label>
-        <input
-          type="text"
-          class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
-        />
-      </div>
-      <div class="flex flex-col py-4 pb-8">
-        <label for="Message" class="text-base font-medium">Message</label>
-        <textarea
-          name="text"
-          id=""
-          cols="20"
-          rows="4"
-          class="outline-none border-b-2 border-solid focus:border-red-400 transition-all"
-        ></textarea>
-      </div>
-      <a
-        href=""
-        class="bg-red-400 px-8 py-3 rounded-md text-white hover:bg-white hover:text-red-400 border-2 border-solid border-red-400 transition-all"
-        >Submit Now</a
-      >
     </div>
   </div>
-</div>
+</form>
