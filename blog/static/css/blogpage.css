@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap');
 /*Nav Bar section starts here*/
 
 .custom-navbar {
-    background-color: #FAF9F0;
+    background-color: #f0f0f0;
 }
 
 /*Navbar section ends here*/
@@ -65,7 +66,7 @@
     position: relative;
     overflow: hidden;
     align-items: flex-start;
-    background-image: linear-gradient(15deg, #FFFBEB 0%, #FFE7CC 1500%);
+    background-image: linear-gradient(15deg, #f0f0f0 0%, #f0f0f0 1500%);
     width: 140cap;
     height: 93ch;
     justify-content: space-evenly;
@@ -291,7 +292,7 @@ span:nth-of-type(2) em {
     overflow: hidden;
     height: auto;
     align-items: flex-start;
-    background-image: linear-gradient(15deg, #FFFBEB 0%, #FFE7CC 150%);
+    background-image: linear-gradient(15deg, #f0f0f0 0%, #f0f0f0 150%);
     display: flex;
     min-height: 100%;
     justify-content: space-evenly;
@@ -303,7 +304,7 @@ span:nth-of-type(2) em {
     background-position: center;
     border-radius: 30px;
     bottom: 0;
-    filter: invert(0.3) brightness(0.75) saturate(1.2) contrast(1) blur(1px) opacity(40);
+    filter: invert(0.3) brightness(0.5) saturate(1.2) contrast(1) blur(1px) opacity(40);
     left: 0;
     position: absolute;
     font-weight: 500;
@@ -342,6 +343,8 @@ span:nth-of-type(2) em {
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
     word-spacing: 100vw;
+    font-family: "Palanquin Dark", sans-serif;
+    font-weight: 700;
 }
 
 
@@ -352,75 +355,82 @@ span:nth-of-type(2) em {
 /*---------------------------------------------------------------------------------------------------------------------------------------*/
 
 
-
-/*About us Section starts here*/
-
+/* About us Section starts here */
 
 .about-section {
-    padding: var(--spacing-xxl) var(--spacing-l);
-    background-color: #FFFBEB;
-    /* Adjusted background color */
+    background-color: #f0f0f0;
+    padding: 80px 80px 80px 150px;
+    position: relative;
+    /* Make .about-section a positioning context for absolute positioning */
 }
 
 .about-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    max-width: var(--width-container);
-    margin: 0 auto;
+    position: relative;
 }
 
 .about-photo-container {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
+    z-index: 2;
+    /* Set a lower z-index to make sure it's on top */
 }
 
 .about-photo {
     width: 100%;
     height: 100%;
-    background-image: url('/path/to/your/photo.jpg');
-    /* Replace with the path to your circular photo */
+    background-image: url('/blog/static/photos/Blog_page/author\ bhai.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top right;
     border: 2px solid #FFA500;
-    /* Adjusted border color */
+    border-radius: 50%;
 }
 
 .about-info-container {
-    max-width: 600px;
-    text-align: left;
+    max-width: 800px;
+    color: #333;
 }
 
-.about-info-container h2 {
-    color: #2d3548;
-    /* Adjusted text color */
+.about-circle {
+    width: 300px;
+    height: 300px;
+    background-color: #FFA500;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    /* Adjust the percentage based on your preference */
+    left: 3%;
+    /* Adjust the percentage based on your preference */
+    transform: translate(-10px, -10px);
+    z-index: 1;
+    /* Set a higher z-index to make sure it's behind the photo */
 }
 
-.about-info-container p {
-    color: #2d3548;
-    /* Adjusted text color */
-    margin-bottom: var(--spacing-m);
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
 }
 
 .contact-button {
-    background-color: #2d3548;
-    /* Adjusted button color */
-    color: #FFFBEB;
-    /* Adjusted text color */
-    padding: 0.75rem 1.5rem;
-    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
 }
 
 .contact-button:hover {
-    background-color: #FFA500;
-    /* Adjusted button color on hover */
+    background-color: #e09200;
 }
 
-
-
-/*About us section ends here*/
+/* About us section ends here */
