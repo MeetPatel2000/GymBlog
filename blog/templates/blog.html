@@ -2,407 +2,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      /* Typography */
-      @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Lora&family=Ubuntu:wght@300;400;700&display=swap");
-      body {
-        margin: 0;
-        font-family: "Ubuntu", sans-serif;
-        font-size: 1.125rem;
-        font-weight: 300;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Lora", serif;
-        font-weight: 400;
-        color: #143774;
-        margin-top: 0;
-      }
-      h1 {
-        font-size: 2rem;
-        margin: 0;
-      }
-      a {
-        color: #1792d2;
-      }
-
-      a:hover,
-      a:focus {
-        color: #143774;
-      }
-
-      strong {
-        font-weight: 700;
-      }
-      .subtitle {
-        font-size: 0.85rem;
-        font-weight: 700;
-        margin: 0;
-        color: #1792d2;
-        letter-spacing: 0.05em;
-        font-family: "Ubuntu Bold", sans-serif;
-      }
-      .article-title {
-        font-size: 1.5rem;
-      }
-
-      .article-read-more,
-      .article-info {
-        font-size: 0.875rem;
-      }
-
-      .article-read-more {
-        color: #1792d2;
-        text-decoration: none;
-        font-weight: 700;
-      }
-      .article-read-more:hover,
-      .article-read-more:focus {
-        color: #143774;
-        text-decoration: underline;
-      }
-      .article-info {
-        margin: 2em 0;
-      }
-      header {
-        padding: 2em 0;
-        text-align: center;
-        background: #f0f8ff;
-        font-family: sans-serif;
-        margin-bottom: 3em;
-      }
-      .container-flex {
-        max-width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1em;
-      }
-      nav ul {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        padding: 0;
-      }
-      nav li {
-        margin: 0 1em;
-      }
-      nav a {
-        text-decoration: none;
-        color: #707070;
-        font-weight: 700;
-        padding: 0.25em 0;
-      }
-
-      nav a:hover,
-      nav a:focus {
-        color: #143774;
-        border-bottom: 1px solid black;
-        transition: 0.3s ease;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      main {
-        max-width: 75%;
-      }
-      .article-body {
-        width: 100%;
-        text-align: justify;
-      }
-      .sidebar {
-        max-width: 23%;
-      }
-      footer {
-        background: #143774;
-        color: white;
-        text-align: center;
-        padding: 3em 0;
-      }
-      footer a {
-        text-decoration: none;
-        color: white;
-      }
-      footer a:hover {
-        text-decoration: underline;
-        color: white;
-      }
-      @media (max-width: 1050px) {
-        .container-flex {
-          flex-direction: column;
-        }
-        .site-title,
-        .subtitle {
-          width: 100%;
-        }
-        main {
-          max-width: 100%;
-        }
-        .sidebar {
-          max-width: 100%;
-        }
-      }
-      @media (max-width: 500px) {
-        nav ul {
-          display: flex;
-          flex-direction: column;
-        }
-        nav li {
-          margin: 0.5em 0;
-        }
-      }
-
-      /* articles */
-      .article-featured {
-        border-bottom: #707070 1px solid;
-        padding-bottom: 2em;
-        margin-bottom: 2em;
-      }
-      .article-recent {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2em;
-      }
-
-      .article-recent-main {
-        order: 2;
-      }
-
-      .article-recent-secondary {
-        order: 1;
-      }
-
-      @media (min-width: 675px) {
-        .article-recent {
-          flex-direction: row;
-          justify-content: space-between;
-        }
-
-        .article-recent-main {
-          width: 68%;
-        }
-
-        .article-recent-secondary {
-          width: 30%;
-        }
-      }
-
-      .hidden {
-        display: none;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/blog/static/css/blogpage.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- header starts -->
     <header>
-      <div class="container container-flex">
-        <div class="site-title">
-          <h1>Gym Lifestyle</h1>
-          <p class="subtitle">Your guide to a healthy and fit life.</p>
+      <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <h1>Gym Lifestyle</h1>
+            <p class="subtitle">Your guide to a healthy and fit life.</p>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-section">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Fitness Tips</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout_view' %}">Log Out</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#" class="current-page">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Fitness Tips</a></li>
-            <li>
-              <a href="{% url 'logout_view' %}">Log Out</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      </nav>
     </header>
     <!-- header ends -->
 
-    <!-- container starts -->
-    <div class="container container-flex">
-      <main role="main">
-        <article class="article-featured">
-          <h2 class="article-title">Unlock Your Potential with Gym Workouts</h2>
-          <img
-            src="/static/photos/Gym Group.jpg"
-            alt="people working out in a gym"
-            class="article-image"
-          />
-          <p class="article-info">January 15, 2023 | 5 comments</p>
-          <p class="article-body">
-            Discover the power of gym workouts and how they can transform your
-            body and mind. From strength training to cardio, find the perfect
-            routine for your fitness goals.
-          </p>
-          <a href="" onclick="redirectToReadMore('workout')" class="article-read-more"
-            >READ MORE</a
+    <!-- Hero Section starts-->
+    <div class="hero-section">
+      <div class="hero-content">
+        <div id="wrap">
+          <div class="imgContainer">
+            <img
+              src="/blog/static/photos/Blog_page/Gym Group.jpg"
+              alt="Hero Image"
+              class="hero-image"
+            />
+            <div class="overlay-container">
+              <div class="overlay"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-back">
+          <a
+            href="#about-section"
+            style="width: 160px"
+            class="about-us-button chronicle-button"
           >
-        </article>
-
-        <article class="article-recent">
-          <div class="article-recent-main">
-            <h2 class="article-title">
-              Healthy Eating for Fitness Enthusiasts
-            </h2>
-            <p class="article-body">
-              Fuel your body with the right nutrients. Explore simple and
-              nutritious recipes that cater to the needs of fitness enthusiasts,
-              helping you achieve your health goals.
-            </p>
-            <a
-              href="#"
-              onclick="redirectToReadMore('healthy_eating')"
-              class="article-read-more"
-              >READ MORE</a
-            >
-          </div>
-          <div class="article-recent-secondary">
-            <img
-              src="/static/photos/healthy food eating person.jpg"
-              alt="healthy food on a plate"
-              class="article-image"
-            />
-            <p class="article-info">January 10, 2023 | 4 comments</p>
-          </div>
-        </article>
-
-        <article class="article-recent">
-          <div class="article-recent-main">
-            <h2 class="article-title">Balancing Work and Fitness</h2>
-            <p class="article-body">
-              Maintain a healthy work-life balance while pursuing your fitness
-              goals. Tips and strategies to integrate exercise into a busy
-              schedule without compromising productivity.
-            </p>
-            <a
-              href="#"
-              onclick="redirectToReadMore('work_fitness')"
-              class="article-read-more"
-              >READ MORE</a
-            >
-          </div>
-          <div class="article-recent-secondary">
-            <img
-              src="/static/photos/heavy lifting.jpg"
-              alt="person working and exercising"
-              class="article-image"
-            />
-            <p class="article-info">January 5, 2023 | 3 comments</p>
-          </div>
-        </article>
-
-        <article class="article-recent">
-          <div class="article-recent-main">
-            <h2 class="article-title">
-              Gym Essentials: What You Need for a Successful Workout
-            </h2>
-            <p class="article-body">
-              Curate the perfect gym bag with essentials that enhance your
-              workout experience. From comfortable attire to must-have
-              accessories, set yourself up for success.
-            </p>
-            <a
-              href="#"
-              onclick="redirectToReadMore('essentials')"
-              class="article-read-more"
-              >READ MORE</a
-            >
-          </div>
-          <div class="article-recent-secondary">
-            <img
-              src="/static/photos/gym essentials 2.jpg"
-              alt="gym essentials on display"
-              class="article-image"
-            />
-            <p class="article-info">December 30, 2022 | 4 comments</p>
-          </div>
-        </article>
-      </main>
-
-      <aside class="sidebar">
-        <div class="sidebar-widget">
-          <h2 class="widget-title">ABOUT THE AUTHOR</h2>
-          <img
-            src="/static/photos/author bhai.jpg"
-            alt="author in a gym setting"
-            class="widget-image"
-          />
-          <p class="widget-body">
-            Passionate about fitness and well-being, our author is dedicated to
-            helping you achieve a healthier lifestyle through practical tips and
-            advice.
-          </p>
+            <span><em>About Us</em></span>
+          </a>
         </div>
-
-        <div class="sidebar-widget">
-          <h2 class="widget-title">RECENT POSTS</h2>
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">
-              Healthy Eating for Fitness Enthusiasts
-            </h3>
-            <img
-              src="/static/photos/healthy_food.jpg"
-              alt="healthy food on a plate"
-              class="widget-image"
-            />
-          </div>
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">Balancing Work and Fitness</h3>
-            <img
-              src="/static/photos/person exercising.jpg"
-              alt="person working and exercising"
-              class="widget-image"
-            />
-          </div>
-          <div class="widget-recent-post">
-            <h3 class="widget-recent-post-title">
-              Gym Essentials: What You Need for a Successful Workout
-            </h3>
-            <img
-              src="/static/photos/gym essentials.jpg"
-              alt="gym essentials on display"
-              class="widget-image"
-            />
-          </div>
-        </div>
-      </aside>
+      </div>
     </div>
-    <!-- container ends -->
+    <!-- Hero Section ends-->
 
-    <!-- footer starts -->
-    <footer>
-      <p><strong>Gym Lifestyle</strong></p>
-      <p>
-        Copyright 2023, <a href="yourwebsite.com" target="_blank">Meet Patel</a>
-      </p>
-    </footer>
-    <!-- footer ends -->
+    <!-- Cards starts-->
+    <section class="card-section">
+      <div class="card-grid">
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/healthy food eating person.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Health & Wellness</p>
+            <h3 class="card__heading">Healthy Eating Habits</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/healthy food eating person.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Health & Wellness</p>
+            <h3 class="card__heading">Healthy Eating Habits</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/healthy food eating person.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Health & Wellness</p>
+            <h3 class="card__heading">Healthy Eating Habits</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/healthy food eating person.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Health & Wellness</p>
+            <h3 class="card__heading">Healthy Eating Habits</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/heavy lifting.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Fitness</p>
+            <h3 class="card__heading">Effective Gym Workouts</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/health and wellness.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Mind & Body</p>
+            <h3 class="card__heading">Mental Wellness Tips</h3>
+          </div>
+        </a>
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/person exercising.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Strength Training</p>
+            <h3 class="card__heading">Building Muscles Safely</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/person exercising.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Strength Training</p>
+            <h3 class="card__heading">Building Muscles Safely</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/person exercising.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Strength Training</p>
+            <h3 class="card__heading">Building Muscles Safely</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/person exercising.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Strength Training</p>
+            <h3 class="card__heading">Building Muscles Safely</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#">
+          <div
+            class="card__background"
+            style="
+              background-image: url('/blog/static/photos/Blog_page/person exercising.jpg');
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Strength Training</p>
+            <h3 class="card__heading">Building Muscles Safely</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- Cards ends-->
+
+    <!-- About Us Section starts -->
+    <section class="about-section">
+      <div class="about-container">
+        <!-- Left side with circular photo -->
+        <div class="about-photo-container">
+          <div class="about-photo"></div>
+        </div>
+
+        <!-- Right side with information and contact button -->
+        <div class="about-info-container">
+          <h2>About Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p>For inquiries or collaborations, feel free to contact us!</p>
+          <button class="contact-button">Contact Us</button>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section ends -->
   </body>
   <script>
-     document.addEventListener('DOMContentLoaded', function() {
-      // Get the type parameter from the URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const postType = urlParams.get('type');
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      // Display content based on postType
-      const blogContentDiv = document.getElementById('blogContent');
-
-      if (postType === 'workout') {
-        blogContentDiv.innerHTML = `
-          <h2>Fitness Research</h2>
-          <img src="fitness_image.jpg" alt="Fitness Research Image">
-          <p>Extended content for fitness research...</p>
-        `;
-      } else if (postType === 'healthyFood') {
-        blogContentDiv.innerHTML = `
-          <h2>Healthy Food</h2>
-          <img src="healthy_food_image.jpg" alt="Healthy Food Image">
-          <p>Extended content for healthy food blog...</p>
-        `;
-      } else {
-        blogContentDiv.innerHTML = '<p>Invalid post type.</p>';
-      }
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth",
+        });
+      });
     });
-  </script>
   </script>
 </html>
