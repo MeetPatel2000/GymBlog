@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+
 /*Nav Bar section starts here*/
 
 .custom-navbar {
@@ -338,7 +339,7 @@ span:nth-of-type(2) em {
 }
 
 .card__heading {
-    color: #FFFBEB;
+    color: #F57D1F;
     font-size: 1.9rem;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
@@ -434,3 +435,77 @@ p {
 }
 
 /* About us section ends here */
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+/*Footer Section starts here*/
+
+
+/* Footer styles */
+.footer-section {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo h1 {
+    font-size: 24px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.footer-links li {
+    margin-right: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 20px;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+    }
+
+    .footer-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+/*Footer Section Ends here*/
