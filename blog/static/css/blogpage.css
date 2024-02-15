@@ -13,202 +13,149 @@
 /*Hero Section starts here*/
 
 
-#wrap {
+.hero {
     position: relative;
-    overflow: hidden;
-}
-
-.imgContainer {
-    position: relative;
-    z-index: -1;
-}
-
-#wrap img {
-    width: 100%;
-    height: auto;
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-    filter: blur(0);
-    transition: filter 0.8s ease-in-out;
-}
-
-.overlay-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 7px;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.over-right,
-.over-left {
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 0.1;
-    animation-duration: 1.75s;
-    animation-fill-mode: both;
-}
-
-.over-right {
-    transform: translateX(0) translateY(0) skewX(0deg);
-    animation-name: overlayR;
-}
-
-.over-left {
-    transform: translateX(0) translateY(0) skewX(0deg);
-    animation-name: overlayL;
-}
-
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    align-items: flex-start;
-    background-image: linear-gradient(15deg, #f0f0f0 0%, #f0f0f0 1500%);
-    width: 140cap;
-    height: 93ch;
-    justify-content: space-evenly;
-    padding: var(--spacing-xxl) var(--spacing-l);
-}
-
-.hero-content {
-    position: relative;
-    height: 100%;
-    perspective: 1000px;
+    background: url('/blog/static/photos/Blog_page/Gym\ Group.jpg') center/cover no-repeat;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    height: 100vh;
+    background-position: center 8%;
 }
 
-.hero-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease-in-out;
-}
-
-.overlay {
+.hero::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transition: transform 0.8s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black color with 60% opacity */
+    z-index: 1;
+    /* Ensure the overlay is behind the content */
 }
 
-.content-back {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out;
+.hero-content {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    /* Ensure the content is on top of the overlay */
 }
 
-.chronicle-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    line-height: 2;
-    border-radius: 5rem;
-    padding: 0.5rem 2.232rem;
-    cursor: pointer;
-    background: white;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s step-start;
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
 }
 
-.hero-section:hover #wrap img {
-    filter: grayscale(2) blur(10px);
+.hero-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-in-out 0.5s;
+    color: #f3b115;
 }
 
-.hero-section:hover .overlay {
-    transform: rotateY(180deg);
-}
-
-.hero-section:hover .content-back {
-    opacity: 1;
-}
-
-.hero-section:hover .content-back .chronicle-button {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.chronicle-button:hover {
-    background: #a594fd;
-}
-
-.chronicle-button:hover span em {
-    opacity: 0;
-}
-
-.chronicle-button:hover span:nth-of-type(2) em {
-    opacity: 1;
-}
-
-span {
-    position: relative;
-    display: block;
-    perspective: 108px;
-}
-
-span:nth-of-type(2) {
-    position: absolute;
-}
-
-em {
-    font-style: normal;
+.hero-button {
     display: inline-block;
-    font-size: 1.125rem;
-    color: black;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000000;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Hero button*/
+
+.hero-button {
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #f5f5f5;
+    /* Your desired text color */
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    cursor: pointer;
+    border: 2px solid #e30449;
+    /* Your desired border color */
+    border-radius: 4px;
+    padding: 2px 20px;
     font-weight: 700;
-    will-change: transform, opacity, transition;
-    transition: transform 0.55s cubic-bezier(0.645, 0.045, 0.355, 1),
-        opacity 0.35s linear 0.2s;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
 }
 
-span em {
-    transform-origin: top;
+.hero-button:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -40%;
+    width: 300%;
+    height: 400%;
+    background-color: #e30449;
+    /* Your desired background color */
+    transition: all 0.3s ease-in-out;
+    transform: rotate(-45deg);
 }
 
-span:nth-of-type(2) em {
-    opacity: 0;
-    transform: rotateX(-90deg) scaleX(0.9) translate3d(0, 10px, 0);
-    transform-origin: bottom;
+.hero-button:hover:before {
+    top: 0;
+    left: -160%;
+    width: 380%;
+    height: 800%;
 }
 
-@keyframes overlayR {
-    from {
-        transform: translateX(124%) translateY(-100%) skewX(-51deg);
-    }
-
-    to {
-        transform: translateX(49%) translateY(-100%) skewX(-51deg);
-    }
+.hero-button span {
+    transition: all 0.3s ease-in-out;
+    display: block;
+    height: 100%;
+    position: relative;
+    top: 0;
+    color: #fff;
+    height: 3.5em;
+    width: 5em;
+    /* Set the initial text color */
 }
 
-@keyframes overlayL {
-    from {
-        transform: translateX(-200%) translateY(0) skewX(-51deg);
-    }
+.hero-button:hover span {
+    top: -100% !important;
+    transition: top 0.3s ease-in-out;
+    /* Remove color transition from here */
+}
 
-    to {
-        transform: translateX(-51%) translateY(0) skewX(-51deg);
-    }
+.hero-button span:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-button:hover span:after {
+    transform: translateY(-50%);
 }
 
 
@@ -336,6 +283,7 @@ span:nth-of-type(2) em {
     /* Adjusted font size for responsiveness */
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
+    font-family: "Palanquin Dark", sans-serif;
 }
 
 .card__heading {
