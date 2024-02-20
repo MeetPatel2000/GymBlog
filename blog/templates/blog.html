@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/blog/static/css/blogpage.css" />
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
     <script
@@ -88,7 +89,7 @@
     <section id="fitness" class="card-section">
       <div class="card-grid">
         <!-- Card - 1 -->
-        <a class="card product" href="#">
+        <a class="card product" href="#" data-popup-target="popup-1">
           <div
             class="card__background"
             style="
@@ -101,7 +102,9 @@
           </div>
         </a>
 
-        <div class="popup-div">
+        <!-- Popup-div for card - 1 starts here-->
+
+        <div class="popup-div" id="popup-1">
           <div class="popup-content">
             <a
               style="
@@ -110,61 +113,128 @@
                 position: absolute;
                 text-decoration: navajowhite;
                 transform: rotate(45deg);
-                font-size: 50px;
+                font-size: 80px;
                 right: 10px;
-                top: 10px;
+                top: -20px;
               "
               >+</a
             >
-            <strong>
-              pello Message Section 1.10.32 of "de Finibus Bonorum et Malorum",
-              written by Cicero in 45 BC</strong
-            ><br />
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?"
-            <strong>1914 translation by H. Rackham</strong><br />
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?" "Sed ut perspiciatis unde omnis iste natus error sit
-            voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-            magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-            quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-            adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-            labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad
-            minima veniam, quis nostrum exercitationem ullam corporis suscipit
-            laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-            vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas
-            nulla pariatur?" chello Message
+            <button class="dark-mode-button" data-card-id="popup-1">
+              <span class="mode-icon"><i class="fas" id="mode-icon"></i></span>
+              <span class="mode-indicator">🌑</span>
+            </button>
+
+            <h2 class="popup-heading">
+              Title: Unraveling the Mysteries of Maximizing Your Workouts
+            </h2>
+            <br />
+            <div class="popup-hero">
+              <img
+                src="/blog/static/photos/Blog_page/mystries image.jpg"
+                alt="Guy working out"
+                class="popup-img"
+              />
+            </div>
+            <br />
+            <!--Dark button-->
+
+            <p class="popup-text">
+              In the dynamic world of fitness, where routines evolve, and trends
+              come and go, one constant remains—the pursuit of maximizing
+              workouts. As enthusiasts, we crave the secrets that unlock our
+              full potential in the gym, revealing the mysteries that elevate
+              our fitness journey. Join me as we delve into the intricacies of
+              optimizing workouts, unearthing the science, mindset, and
+              practical tips that will empower you to make the most of every
+              session.
+            </p>
+            <br />
+            <h4 class="popup-heading">The Science Behind Maximized Workouts</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Understand Your Body:</span> The journey begins with
+              self-awareness. Each body is unique, responding differently to
+              various exercises and intensities. Embrace your individuality,
+              recognizing strengths and areas for improvement. A tailored
+              approach to workouts ensures optimal results.
+            </p>
+            <p class="popup-text">
+              <span>2. The Power of Compound Movements:</span> Incorporating
+              compound exercises engages multiple muscle groups simultaneously.
+              Squats, deadlifts, and bench presses are fundamental, triggering
+              greater muscle activation and caloric expenditure. Embrace these
+              power-packed movements to enhance efficiency.
+            </p>
+            <p class="popup-text">
+              <span>3. Periodization Techniques:</span> The body adapts to
+              stress over time, necessitating changes in your workout routine.
+              Periodization involves altering intensity, volume, and exercises
+              periodically. This strategic approach prevents plateaus and
+              promotes continuous gains.
+            </p>
+            <br />
+            <h4 class="popup-heading">The Mindset Game</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Goal Setting:</span> Define clear, achievable fitness
+              goals. Whether it's building muscle, losing weight, or improving
+              endurance, setting specific objectives provides direction and
+              motivation.
+            </p>
+            <p class="popup-text">
+              <span>2. Consistency is Key:</span> Maximizing workouts requires
+              dedication. Consistency in training, nutrition, and recovery
+              establishes a foundation for sustained progress. Celebrate small
+              victories along the way, reinforcing positive habits.
+            </p>
+            <p class="popup-text">
+              <span>3. Embrace the Process:</span> Fitness is a journey, not a
+              destination. Enjoy the process of self-improvement, understanding
+              that results unfold gradually. Patience and perseverance are
+              virtues in the pursuit of fitness excellence.
+            </p>
+            <br />
+            <h4 class="popup-heading">Practical Tips for Maximum Impact</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Optimal Nutrition:</span> Fuel your body with
+              nutrient-dense foods to support energy levels and recovery.
+              Prioritize a balanced diet rich in protein, carbohydrates, and
+              healthy fats.
+            </p>
+            <p class="popup-text">
+              <span>2. Adequate Rest and Recovery:</span> Muscles grow during
+              periods of rest. Ensure sufficient sleep and incorporate rest days
+              into your routine. Listen to your body, allowing it to recuperate
+              and prevent burnout.
+            </p>
+            <p class="popup-text">
+              <span>3. Smart Supplementation: </span> Supplement wisely to fill
+              nutritional gaps and enhance performance. Consult with fitness
+              professionals to identify supplements aligned with your goals.
+            </p>
+            <br />
+            <h4>Conclusion</h4>
+            <br />
+            <p class="popup-text">
+              In unraveling the mysteries of maximizing workouts, we discover a
+              blend of science, mindset, and practical application. The journey
+              involves continuous learning, adapting to your body's needs, and
+              maintaining a positive mindset. Armed with knowledge and
+              commitment, you are poised to embark on a transformative fitness
+              odyssey. Embrace the challenges, celebrate victories, and relish
+              the process—a journey towards unlocking your full fitness
+              potential.
+            </p>
+            <br />
           </div>
         </div>
 
+        <!-- Popup-div for card - 1 ends here-->
+
         <!-- Card - 2 -->
 
-        <a class="card" href="#">
+        <a class="card product" href="#" data-popup-target="popup-2">
           <div
             class="card__background"
             style="
@@ -176,6 +246,136 @@
             <h3 class="card__heading">Muscle Sculptor</h3>
           </div>
         </a>
+
+        <!-- Popup-div for card - 2 starts here-->
+
+        <div class="popup-div" id="popup-2">
+          <div class="popup-content">
+            <a
+              style="
+                color: #f00;
+                display: block;
+                position: absolute;
+                text-decoration: navajowhite;
+                transform: rotate(45deg);
+                font-size: 80px;
+                right: 10px;
+                top: -20px;
+              "
+              >+</a
+            >
+            <button class="dark-mode-button" data-card-id="popup-2">
+              <span class="mode-icon"><i class="fas" id="mode-icon"></i></span>
+              <span class="mode-indicator">🌑</span>
+            </button>
+
+            <h2 class="popup-heading">
+              Muthicon: Unraveling the Mysteries of Maximizing Your Workouts
+            </h2>
+            <br />
+            <div class="popup-hero">
+              <img
+                src="/blog/static/photos/Blog_page/mystries image.jpg"
+                alt="Guy working out"
+                class="popup-img"
+              />
+            </div>
+            <br />
+            <!--Dark button-->
+
+            <p class="popup-text">
+              In the dynamic world of fitness, where routines evolve, and trends
+              come and go, one constant remains—the pursuit of maximizing
+              workouts. As enthusiasts, we crave the secrets that unlock our
+              full potential in the gym, revealing the mysteries that elevate
+              our fitness journey. Join me as we delve into the intricacies of
+              optimizing workouts, unearthing the science, mindset, and
+              practical tips that will empower you to make the most of every
+              session.
+            </p>
+            <br />
+            <h4 class="popup-heading">The Science Behind Maximized Workouts</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Understand Your Body:</span> The journey begins with
+              self-awareness. Each body is unique, responding differently to
+              various exercises and intensities. Embrace your individuality,
+              recognizing strengths and areas for improvement. A tailored
+              approach to workouts ensures optimal results.
+            </p>
+            <p class="popup-text">
+              <span>2. The Power of Compound Movements:</span> Incorporating
+              compound exercises engages multiple muscle groups simultaneously.
+              Squats, deadlifts, and bench presses are fundamental, triggering
+              greater muscle activation and caloric expenditure. Embrace these
+              power-packed movements to enhance efficiency.
+            </p>
+            <p class="popup-text">
+              <span>3. Periodization Techniques:</span> The body adapts to
+              stress over time, necessitating changes in your workout routine.
+              Periodization involves altering intensity, volume, and exercises
+              periodically. This strategic approach prevents plateaus and
+              promotes continuous gains.
+            </p>
+            <br />
+            <h4 class="popup-heading">The Mindset Game</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Goal Setting:</span> Define clear, achievable fitness
+              goals. Whether it's building muscle, losing weight, or improving
+              endurance, setting specific objectives provides direction and
+              motivation.
+            </p>
+            <p class="popup-text">
+              <span>2. Consistency is Key:</span> Maximizing workouts requires
+              dedication. Consistency in training, nutrition, and recovery
+              establishes a foundation for sustained progress. Celebrate small
+              victories along the way, reinforcing positive habits.
+            </p>
+            <p class="popup-text">
+              <span>3. Embrace the Process:</span> Fitness is a journey, not a
+              destination. Enjoy the process of self-improvement, understanding
+              that results unfold gradually. Patience and perseverance are
+              virtues in the pursuit of fitness excellence.
+            </p>
+            <br />
+            <h4 class="popup-heading">Practical Tips for Maximum Impact</h4>
+            <br />
+            <p class="popup-text">
+              <span>1. Optimal Nutrition:</span> Fuel your body with
+              nutrient-dense foods to support energy levels and recovery.
+              Prioritize a balanced diet rich in protein, carbohydrates, and
+              healthy fats.
+            </p>
+            <p class="popup-text">
+              <span>2. Adequate Rest and Recovery:</span> Muscles grow during
+              periods of rest. Ensure sufficient sleep and incorporate rest days
+              into your routine. Listen to your body, allowing it to recuperate
+              and prevent burnout.
+            </p>
+            <p class="popup-text">
+              <span>3. Smart Supplementation: </span> Supplement wisely to fill
+              nutritional gaps and enhance performance. Consult with fitness
+              professionals to identify supplements aligned with your goals.
+            </p>
+            <br />
+            <h4>Conclusion</h4>
+            <br />
+            <p class="popup-text">
+              In unraveling the mysteries of maximizing workouts, we discover a
+              blend of science, mindset, and practical application. The journey
+              involves continuous learning, adapting to your body's needs, and
+              maintaining a positive mindset. Armed with knowledge and
+              commitment, you are poised to embark on a transformative fitness
+              odyssey. Embrace the challenges, celebrate victories, and relish
+              the process—a journey towards unlocking your full fitness
+              potential.
+            </p>
+            <br />
+          </div>
+        </div>
+
+        <!-- Popup-div for card - 2 ends here-->
         <!-- Card - 3 -->
 
         <a class="card" href="#">
@@ -262,6 +462,7 @@
         </a>
       </div>
     </section>
+
     <!-- Cards ends-->
 
     <!-- About Us Section starts -->
@@ -277,21 +478,21 @@
 
         <!-- Right side with information and contact button -->
         <div class="about-info-container">
-          <h2>About Us</h2>
+          <h2 class="about-heading">About Us</h2>
           <!-- ... (rest of your content) ... -->
-          <p>
+          <p class="about-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <p>
+          <p class="about-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <p>
+          <p class="about-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <p>
+          <p class="about-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
@@ -372,13 +573,51 @@
 
     jQuery(document).ready(function () {
       jQuery(".product").click(function () {
-        jQuery(".popup-div").fadeIn();
+        var targetPopup = jQuery(this).data("popup-target");
+        jQuery("#" + targetPopup).fadeIn();
         jQuery("body").addClass("hiiden-f").css("overflow", "hidden");
       });
+
       jQuery(".popup-div a").click(function () {
         jQuery(".popup-div").fadeOut();
         jQuery("body").removeClass("hiiden-f").css("overflow", "auto");
       });
+    });
+
+    // Darkmode button
+
+    document.addEventListener("DOMContentLoaded", function () {
+      function initializeDarkModeButton(cardId) {
+        const darkModeButton = document.querySelector(
+          `#${cardId} .dark-mode-button`
+        );
+        const modeIcon = document.querySelector(`#${cardId} .mode-icon`);
+        const modeIndicator = document.querySelector(
+          `#${cardId} .mode-indicator`
+        );
+        const popupContent = document.querySelector(
+          `#${cardId} .popup-content`
+        );
+
+        darkModeButton.addEventListener("click", function () {
+          // Toggle dark mode class on the popup content for the specified card
+          popupContent.classList.toggle("dark-mode");
+
+          // Toggle text and icon on the button based on the current mode
+          const isDarkMode = popupContent.classList.contains("dark-mode");
+          modeIndicator.textContent = isDarkMode ? "☀️" : "🌑";
+          modeIcon.innerHTML = isDarkMode
+            ? '<i class="fas fa-moon"></i>'
+            : '<i class="fas fa-sun"></i>';
+
+          // You can add additional logic to toggle other dark mode elements here
+        });
+      }
+
+      // Initialize dark mode button for Card - 1
+      initializeDarkModeButton("popup-1");
+      initializeDarkModeButton("popup-2");
+      // Repeat for other cards as needed
     });
   </script>
 </html>

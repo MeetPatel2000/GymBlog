@@ -44,7 +44,6 @@ def login_view(request):
             
         else:
             messages.error(request, "Bad Credentials!!")    
-            return redirect('login')
         
     return render(request,'login.html')
 
