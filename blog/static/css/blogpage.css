@@ -405,13 +405,20 @@
 }
 
 h4 {
-    color: #333;
+    color: #ff6904;
     margin-top: 20px;
     font-family: "Merriweather", serif;
     font-weight: 700;
     text-decoration: solid;
 }
 
+.sub-heading {
+    color: #333;
+}
+
+.heading-group {
+    color: #b10000;
+}
 
 .hiiden-f {
     overflow: scroll;
@@ -424,6 +431,36 @@ a {
 
 
 /*Dark Button Code*/
+#tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+#tooltip:hover::after {
+    content: "Light or Dark? Your Choice!";
+    position: absolute;
+    color: #b10000;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 18px;
+    top: 30px;
+    left: 190px;
+    transform: translateX(-50%);
+    font-family: "Palanquin Dark", sans-serif;
+    font-weight: 100;
+    white-space: nowrap;
+}
+
+#tooltip:hover::before {
+    content: "";
+    position: absolute;
+    border-width: 6px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /* Add this to your existing CSS */
 .dark-mode-button {
@@ -450,7 +487,8 @@ a {
 
 .popup-content.dark-mode p,
 .popup-content.dark-mode h2,
-.popup-content.dark-mode h4 {
+.popup-content.dark-mode h4,
+.popup-content.dark-mode .sub-heading {
     color: #ccc;
     /* Change this to the desired text color in dark mode */
 }
